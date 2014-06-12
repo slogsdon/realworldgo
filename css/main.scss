@@ -1,0 +1,44 @@
+---
+---
+// Imports
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "base/base";
+@import "tomorrow-night-eighties";
+
+// Variables
+$large-screen: 1200px;
+$medium-screen: 1088px;
+
+// Refills
+@import "header-navigation";
+@import "geometric-typography";
+@import "footer";
+
+// Styles
+html,body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  @include outer-container;
+
+  section { @include span-columns(12); }
+}
+
+.icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+}
+
+
+.post pre {
+  padding: 8px 12px;
+}
+.post code {
+  font-size: 15px;
+  padding: 0;
+}
