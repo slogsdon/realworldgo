@@ -8,5 +8,13 @@ youtube: realworldgo
 googleplus: "https://plus.google.com/114095242175921008597"
 
 # Build settings
-markdown: kramdown
-permalink: /:categories/:title
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+permalink: "/:categories/:title"
+relative_permalinks: false
+paginate: 5
+paginate_path: "page/:num"
+encoding: "utf-8"
+sass:
+    style: :compressed

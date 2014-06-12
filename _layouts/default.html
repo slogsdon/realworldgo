@@ -6,14 +6,13 @@
 <body>
   {% include header.html %}
 
-  <div class="page-content">
-    <div class="wrap">
-    {{ content }}
-    </div>
-  </div>
+  <main>
+    <section class="main">
+      {{ content }}
+    </section>
+  </main>
 
   {% include footer.html %}
-  {% include ga.html %}
-  {% include muut.html %}
+  {% include javascript.html %}
 </body>
 </html>
