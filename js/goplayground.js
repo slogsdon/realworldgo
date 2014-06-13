@@ -84,7 +84,7 @@ function HTTPTransport() {
       seq++;
       var cur = seq;
       var playing;
-      $.ajax('/compile', {
+      $.ajax('http://golang.org/compile', {
         type: 'POST',
         data: {'version': 2, 'body': body},
         dataType: 'json',
@@ -118,7 +118,7 @@ function SocketTransport() {
   var id = 0;
   var outputs = {};
   var started = {};
-  var websocket = new WebSocket('ws://' + window.location.host + '/socket');
+  var websocket = new WebSocket('ws://golang.org/socket');
 
   websocket.onclose = function() {
     console.log('websocket connection closed');
@@ -295,7 +295,7 @@ function PlaygroundOutput(el) {
     var output = $('<pre/>').appendTo(outdiv);
   
     function body() {
-      return $(opts.codeEl).val();
+      return $(opts.codeEl).text();
     }
     function setBody(text) {
       $(opts.codeEl).val(text);

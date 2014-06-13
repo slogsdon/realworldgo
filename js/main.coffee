@@ -75,16 +75,29 @@
 
     # TODO: integrate this with all go code blocks
     startPlayground: startPlayground = (el) ->
-      code = $('.code', el)
+      code = $('.language-go', el)
       playground
         codeEl: code
-        outputEl: $(".output", el)
-        runEl: $(".run", el)
-        fmtEl: $(".fmt", el)
-        shareEl: $(".share", el)
-        shareRedirect: "http://play.golang.org/p/"
+        outputEl: $('.output', el)
+        runEl: $('.actions .run', el)
+        fmtEl: $('.action .fmt', el)
+        shareEl: $('.action .share', el)
+        shareRedirect: 'http://play.golang.org/p/'
 
   $(document).ready ->
+    # $('.highlight [data-lang="go"]').each ->
+    #   $this = $(this)
+    #   $highlight = $this.parent().parent()
+    #   html = '<pre><code class="output">&nbsp;</code></pre>' +
+    #     '<div class="actions">' +
+    #     '<button class="run">Run</button>' +
+    #     '<button class="fmt">Format</button>' +
+    #     '<button class="share">Share</button></div>'
+
+    #   $highlight.append html
+    #   startPlayground $highlight
+    #   return
+      
     $($menuToggle).click (e) ->
       e.preventDefault()
       $menu.slideToggle ->
