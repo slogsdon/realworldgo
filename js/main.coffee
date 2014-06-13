@@ -1,6 +1,5 @@
 ---
 ---
-
 ((window, document, $) ->
   $menu = $('#navigation-menu')
   $menuToggle = $('#js-mobile-menu')
@@ -73,6 +72,17 @@
         $searchResults.show()
 
       return
+
+    # TODO: integrate this with all go code blocks
+    startPlayground: startPlayground = (el) ->
+      code = $('.code', el)
+      playground
+        codeEl: code
+        outputEl: $(".output", el)
+        runEl: $(".run", el)
+        fmtEl: $(".fmt", el)
+        shareEl: $(".share", el)
+        shareRedirect: "http://play.golang.org/p/"
 
   $(document).ready ->
     $($menuToggle).click (e) ->
