@@ -4,7 +4,7 @@
  
 ## Building
 
-Requirements: Jekyll (`gem install jekyll`)
+Requirements: [Jekyll](http://jekyllrb.com) (`gem install jekyll`)
 
 ```
 jekyll serve --watch --drafts
