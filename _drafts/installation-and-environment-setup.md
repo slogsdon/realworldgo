@@ -2,14 +2,24 @@
 layout: post
 title: "Installation and Environment Setup"
 date: 2014-06-11 13:13:00
+author: 0
 ---
 
-## Install
+Installing the necessary bits and bobs when new to any language can really impose a delay on the fun (and important) part: learning that language. Let's get around this so we can really dig into Go.
+
+## Installing
+
+Lucky for us, we have a few options supplied to us by the fine folks maintaining [golang.org][golang_org]. We're going to be looking into two, specifically a binary distribution (from archives) and the source distribution. Rest assured,
 
 ### From Binaries
 
+Installing from binaries is as easy as [pie][weebl_pie]. Open up a handy terminal/console window, and follow along.
+
+First, we want to download an archive for our target host, in this case Mac OS X (64-bit). Head over to the [Go downloads page][go_downloads_page] to make sure to pick the right archive for your platform and architecture.
+
 ```bash
-$ curl https://storage.googleapis.com/golang/go1.2.2.darwin-amd64-osx10.8.tar.gz > go1.2.2.darwin-amd64-osx10.8.tar.gz
+$ curl https://storage.googleapis.com/golang/go1.2.2.darwin-amd64-osx10.8.tar.gz \
+  > go1.2.2.darwin-amd64-osx10.8.tar.gz
 $ tar -C /usr/local -xfz go1.2.2.darwin-amd64-osx10.8.tar.gz
 ```
 
@@ -68,6 +78,8 @@ src/
             todo.go                # command source
 ```
 
-##
-### Docker
 ### Vagrant
+
+[golang_org]:        http://golang.org
+[weebl_pie]:         http://www.weebls-stuff.com/wab/pie/
+[go_downloads_page]: https://code.google.com/p/go/wiki/Downloads?tm=2
