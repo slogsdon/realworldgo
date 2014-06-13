@@ -14,17 +14,20 @@ layout: default
 
   <article class="post-content">
     {{ content }}
+
+    {% if page.author %}    
+      <p class="author">
+        by: 
+        <a href="https://plus.google.com/{{ site.data.authors[page.author].gplus }}?rel=author" 
+          title="{{ site.data.authors[page.author].name }} on Google+">
+          {{ site.data.authors[page.author].name }}
+        </a>
+      </p>
+    {% endif %}
+
     <section class="post-comments">
       <a class="muut" href="https://muut.com/i/realworldgo/comments/realworldgo.com:{{ page.title | replace:' ','-'  }}">Comments</a>
     </section>
-    
-    <p class="author">
-      by: 
-      <a href="https://plus.google.com/{{ site.data.authors[page.author].gplus }}?rel=author" 
-        title="{{ site.data.authors[page.author].name }} on Google+">
-        {{ site.data.authors[page.author].gplus }}
-      </a>
-    </p>
   </article>
 
 </div>

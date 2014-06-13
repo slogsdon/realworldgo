@@ -3,6 +3,7 @@ layout: post
 title: "Installation and Environment Setup"
 date: 2014-06-11 13:13:00
 author: 0
+categories: tutorials
 ---
 
 Installing the necessary bits and bobs when new to any language can really impose a delay on the fun (and important) part: learning that language. Let's get around this so we can really dig into Go.
@@ -20,29 +21,62 @@ First, we want to download an archive for our target host, in this case Mac OS X
 ```bash
 $ curl https://storage.googleapis.com/golang/go1.2.2.darwin-amd64-osx10.8.tar.gz \
   > go1.2.2.darwin-amd64-osx10.8.tar.gz
+```
+
+Second, we want to uncompress our archive into our desired location. We're going to do this in our `/usr/local` directory, but this is entirely up to you. Just be aware that you may need `sudo` privileges to write to your desired directory.
+
+```bash
 $ tar -C /usr/local -xfz go1.2.2.darwin-amd64-osx10.8.tar.gz
 ```
 
+The binary path needs to be added to your `PATH` environment. We're going to be tackling this by editing our user's `~/.zshrc` (or `~/.bash_profile`, etc.). If we want this to apply to all users, the lines will need to be added to `/etc/profile`, the system-wide `.profile` for `sh`.
+
+While we're here, let's go ahead and add the necessary bits for `GOPATH` and the `GOPATH` binary directory.
+
 ```bash
-export GOPATH=$HOME/Code/go
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOPATH="$HOME/Code/go"
+# Replace /usr/local below with your install directory (if necessary)
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 ```
+
+Finally, we'll need to load our updated profile. The easiest way to accomplish this is to just start up another terminal window or tab, but if you're like me and don't want to do that, source your profile.
+
+```bash
+$ source ~/.zshrc
+```
+
+Awesome! Let's [verify our installation](#verify-our-installation).
 
 ### From Source
 
 ```bash
+$ cd /usr/local
 $ hg clone -u release https://code.google.com/p/go
 $ cd go/src
 $ ./all.bash
 ```
 
-## Verify Installation
+Just like with the installation process with binary archives, the binary path needs to be added to your `PATH` environment. Here they are again for reference.
 
 ```bash
-go version
+export GOPATH="$HOME/Code/go"
+# Replace /usr/local below with your install directory (if necessary)
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 ```
 
-## What's that `$GOPATH` thing?
+We'll also need to load our updated profile.
+
+```bash
+$ source ~/.zshrc
+```
+
+## Verify Our Installation
+
+```bash
+$ go version
+```
+
+## So what's that `$GOPATH` thing?
 
 ```bash
 $ ls $GOPATH

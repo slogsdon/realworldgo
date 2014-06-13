@@ -33,8 +33,12 @@ main {
 article { 
   @include outer-container;
 
-  section { @include span-columns(9); }
-  aside { @include span-columns(3); }
+  & > section { @include span-columns(9); }
+  & > aside { @include span-columns(3); }
+}
+
+.post-comments {
+  width: 100%;
 }
 
 .icon {
