@@ -79,19 +79,19 @@ Let's get a quick verification that our go binary is installed properly.
 $ go version
 ```
 
-You should see your desired go version displayed in your terminal. In our case, we see {{ INSERT GO VERSION }}.
+You should see your installed Go version displayed in your terminal. In our case, we see {{ INSERT GO VERSION }}.
 
 ## So what's that `$GOPATH` thing?
 
-Our defined $GOPATH acts as the workspace for our go projects and third-party libraries and binaries. The go tools use $GOPATH to do their thing. go get downloads projects to $GOPATH/src. go builds projects from $GOPATH/src (when not building a file in the current directory) and puts the binaries in $GOPATH/bin. {{ TODO verify }}
+Our defined `$GOPATH` acts as the workspace for our Go projects and third-party libraries and binaries. The Go tools use `$GOPATH` to do their thing. `go get` downloads projects to `$GOPATH/src`. `go build` builds projects from `$GOPATH/src` (when not building a file in the current directory) and puts the binaries in `$GOPATH/bin`. {{ TODO verify }}
 
-Let's see what is in our $GOPATH. 
+Let's see what is in our `$GOPATH`. 
 
 ```bash
 $ ls $GOPATH
 ```
 
-Nothing because we just started. Eventually, we will have bin, pkg, and src directories. Here's an example directory tree from golang.org. {{ TODO get source link }}
+Nothing because we just started. Eventually, we will have `bin`, `pkg`, and `src` directories. Here's an example directory tree from golang.org. {{ TODO get source link }}
 
 ```bash
 bin/
