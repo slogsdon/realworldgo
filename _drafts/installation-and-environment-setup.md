@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "Installation and Environment Setup"
-date: 2014-06-11 13:13:00
+title: Installation and Environment Setup
+date: {}
 author: 0
 categories: tutorials
+published: true
 ---
 
 Installing the necessary bits and bobs when new to any language can really impose a delay on the fun (and important) part: learning that language. Let's get around this so we can really dig into Go.
@@ -72,17 +73,25 @@ $ source ~/.zshrc
 
 ## Verify Our Installation
 
+Let's get a quick verification that our go binary is installed properly. 
+
 ```bash
 $ go version
 ```
 
+You should see your desired go version displayed in your terminal. In our case, we see {{ INSERT GO VERSION }}.
+
 ## So what's that `$GOPATH` thing?
+
+Our defined $GOPATH acts as the workspace for our go projects and third-party libraries and binaries. The go tools use $GOPATH to do their thing. go get downloads projects to $GOPATH/src. go builds projects from $GOPATH/src (when not building a file in the current directory) and puts the binaries in $GOPATH/bin. {{ TODO verify }}
+
+Let's see what is in our $GOPATH. 
 
 ```bash
 $ ls $GOPATH
 ```
 
-Nothing because we just started. Will be bin, pkg, src
+Nothing because we just started. Eventually, we will have bin, pkg, and src directories. Here's an example directory tree from golang.org. {{ TODO get source link }}
 
 ```bash
 bin/
@@ -111,8 +120,6 @@ src/
                 task.go            # package source
             todo.go                # command source
 ```
-
-### Vagrant
 
 [golang_org]:        http://golang.org
 [weebl_pie]:         http://www.weebls-stuff.com/wab/pie/
